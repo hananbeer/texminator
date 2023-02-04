@@ -21,7 +21,7 @@ bl_info = {
 def is_curve(self, object):
     return object.type == 'FONT'
 
-format_regex = r'\{(\w+)(:[^\}]+)?\}'
+format_regex = r'\{(\w+)(?:[^\}]+)?\}'
 def on_frame(scene, depsgraph):
     text_obj = scene.texminators
     format_tmpl = scene.tex_format
