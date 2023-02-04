@@ -43,7 +43,7 @@ class TexminatorPanel(bpy.types.Panel):
         layout.prop(bpy.context.scene, "tex_format", text="Format")
     
 def register():
-
+    bpy.app.handlers.frame_change_post.append(on_frame)
     bpy.types.Scene.texminators = bpy.props.PointerProperty(type=bpy.types.Object, poll=is_curve)
     bpy.types.Scene.tex_format = bpy.props.StringProperty()
     bpy.utils.register_class(TexminatorPanel)
